@@ -1,0 +1,25 @@
+require('colors');
+const path = require('path');
+const morgan = require('morgan');
+const express = require('express');
+
+const app = express();
+
+app.set('appName', 'Chatty Chirp');
+app.set('port', process.env.PORT || 64022);
+app.set('host', process.env.HOST || '127.0.0.1');
+
+// Settings
+app.use(morgan('dev'));
+app.use(express.json());
+
+// Midelwares
+app.use('/static', express.static(path.join(__dirname, 'public')));
+
+// Server
+app.listen(app.get('port'), function () {
+	logger.info(`App '${app.get('appName')}' running in port ${app.get('port')}`.red);
+	logger.info(`Go to server: ${app.get('host')}`.blue);
+});
+
+module.exports = app;
