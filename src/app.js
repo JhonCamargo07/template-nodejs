@@ -16,6 +16,9 @@ app.use(express.json());
 // Midelwares
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
+// Routers
+app.use(require('./routers/index.router'));
+
 // Server
 app.listen(app.get('port'), function () {
 	logger.info(`App '${app.get('appName')}' running in port ${app.get('port')}`.red);
