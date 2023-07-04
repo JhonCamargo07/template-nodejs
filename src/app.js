@@ -5,7 +5,7 @@ const express = require('express');
 
 const app = express();
 
-app.set('appName', 'Chatty Chirp');
+app.set('appName', 'APP');
 app.set('port', process.env.PORT || 64022);
 app.set('host', process.env.HOST || '127.0.0.1');
 
