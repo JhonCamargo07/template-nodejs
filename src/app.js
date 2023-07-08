@@ -21,8 +21,8 @@ app.use(require('./routers/index.router'));
 
 // Server
 app.listen(app.get('port'), function () {
-	logger.info(`App '${app.get('appName')}' running in port ${app.get('port')}`.red);
-	logger.info(`Go to server: ${app.get('host')}`.blue);
+	console.log(`App '${app.get('appName')}' running in port ${app.get('port')}`.red);
+	console.log(`Go to server: ${app.get('host')}`.blue);
 });
 
 module.exports = app;
